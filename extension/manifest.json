@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Link Hover Extension",
+    "version": "1.0",
+    "description": "Change link hover attribute",
+    "permissions": ["activeTab"],
+    "browser_action": {
+      "default_title": "Link Hover Extension"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
