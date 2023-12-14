@@ -33,7 +33,9 @@ func get_info(w http.ResponseWriter, r *http.Request) {
 	}
 
 	title := doc.Find("title").First().Text()
-	description, _ := doc.Find("meta[name='description']").First().Attr("content")
+
+	// if description is not found, it will be empty
+	description := doc.Find("meta[name='og:description']").First().AttrOr("content", "")
 
 	fmt.Fprintf(w, "{ \"title\" : \"%s\", \"description\" : \"%s\" }", title, description)
 	// print in the console in the format url
