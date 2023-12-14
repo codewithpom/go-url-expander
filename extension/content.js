@@ -6,8 +6,9 @@ function handleHover(event) {
     const hoveredLink = event.target;
 
     const link = hoveredLink.href;
+    
     // make fetch request to https://localgost:4567/expand?url=link
-    fetch(`https://localhost:4567/expand?url=${link}`)
+    fetch(`http://localhost:4567/expand?url=${link}`)
         .then(response => response.json())
         .then(data => {
             // Get the expanded url
@@ -16,6 +17,8 @@ function handleHover(event) {
             hoveredLink.title += `\nShortener Pro:\nLink: expandedUrl\n`;
         })
         .catch(error => console.log(error));
+        // remove this event listener
+        hoveredLink.removeEventListener('mouseover', handleHover);
 }
 
 

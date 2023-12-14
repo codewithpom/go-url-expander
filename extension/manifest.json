@@ -3,7 +3,10 @@
     "name": "Link Hover Extension",
     "version": "1.0",
     "description": "Change link hover attribute",
-    "permissions": ["activeTab"],
+    "permissions": [
+      "activeTab",
+      "http://locahost:4567/*"
+    ],
     "browser_action": {
       "default_title": "Link Hover Extension"
     },
