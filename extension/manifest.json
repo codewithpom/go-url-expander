@@ -5,10 +5,11 @@
     "description": "Change link hover attribute",
     "permissions": [
       "activeTab",
-      "http://locahost:4567/*"
+      "http://locahost:4567/*",
+      "https://go-url-expander.padmashreejha.repl.co/*"
     ],
     "browser_action": {
-      "default_title": "Link Hover Extension"
+      "default_title": "Link Detail Extractor"
     },
     "content_scripts": [
       {

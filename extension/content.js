@@ -1,5 +1,5 @@
 // content.js
-
+BASE_URL = 'https://go-url-expander.padmashreejha.repl.co'
 // Function to handle the hover event
 function handleHover(event) {
     // Get the hovered link
@@ -9,7 +9,7 @@ function handleHover(event) {
 
     // make fetch request to https://localgost:4567/expand?url=link
     hoveredLink.removeEventListener('mouseover', handleHover);
-    fetch(`http://localhost:4567/expand?url=${link}`)
+    fetch(`${BASE_URL}/expand?url=${link}`)
         .then(response => response.json())
         .then(data => {
             // Get the expanded url
@@ -37,7 +37,7 @@ document.addEventListener('keydown', function (event) {
             const hoveredLink = link;
             // remove the event listener
             hoveredLink.removeEventListener('mouseover', handleHover);
-            fetch(`http://localhost:4567/expand?url=${link.href}`)
+            fetch(`${BASE_URL}/expand?url=${link.href}`)
                 .then(response => response.json())
                 .then(data => {
                     // Get the expanded url
@@ -59,7 +59,7 @@ function get_info_handler(event) {
     const link = hoveredLink.href;
     // remove the event listener
     hoveredLink.removeEventListener('mouseover', get_info_handler);
-    fetch(`http://localhost:4567/info?url=${link}`)
+    fetch(`${BASE_URL}/info?url=${link}`)
         .then(response => response.json())
         .then(data => {
             // Get the expanded url
@@ -89,7 +89,7 @@ document.addEventListener('keydown', function (event) {
             const hoveredLink = link;
             // remove the event listener
             hoveredLink.removeEventListener('mouseover', get_info_handler);
-            fetch(`http://localhost:4567/info?url=${link.href}`)
+            fetch(`${BASE_URL}/info?url=${link.href}`)
                 .then(response => response.json())
                 .then(data => {
                     // Get the expanded url
